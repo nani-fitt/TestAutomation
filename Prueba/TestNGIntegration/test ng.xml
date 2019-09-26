@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNGINtegration" verbose="1">
+<test name="">
+<parameter name="myName"  value="true"/>
+<classes>
+<class name="Cucumber.Filter">
+-<listeners>
+<!-- <listener class-name="reportTest.ExtentReporter" /> -->
+<listener class-name="listener.ListenerTest"/>
+</listeners>
+-<suite-files>
+<suite-file path="./suiteReporte.xml"/>
+<suite-file path="./suiteTiempos.xml"/>
+</suite-files>
+</class>
+</classes>
+</test>
+</suite>
+
