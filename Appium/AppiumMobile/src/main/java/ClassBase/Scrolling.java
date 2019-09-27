@@ -49,9 +49,16 @@ public class Scrolling {
 		 System.out.println(element.getText());
 		return element;
 	}
-
-
 	
+	public MobileElement scrollElementByScrollView(String scrollableList, String textToSearchInList) {
+		
+	
+	MobileElement element = (MobileElement)driver.findElement(MobileBy.AndroidUIAutomator(
+					"new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).scrollIntoView("
+					+ "new UiSelector().text(\""+ textToSearchInList + "\")"));
+
+      return element;
+	}
 	
 	//scrollableList is id of your scrollable List element
 	
