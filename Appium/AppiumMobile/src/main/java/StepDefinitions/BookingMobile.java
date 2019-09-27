@@ -28,6 +28,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 public class BookingMobile {
 
 	AndroidDriver<WebElement> driver;
+	
 
 	@Given("^Open the app Supreme Golf and made signIn$")
 	public void openSupremeGolfandmadesignIn(DataTable data) throws Throwable {
@@ -139,19 +140,22 @@ public class BookingMobile {
 		driver.findElement(By.id("com.supremegolf.app.stage:id/img_right_arrow")).click();
 
 		Thread.sleep(5000);
-		//String scrollableList = "com.supremegolf.app.stage:id/tee_times_item_list";
-		//String uiSelector = "android.widget.RelativeLayout";
-		//String textToSearchInList = "20";
+		//	com.supremegolf.app.stage:id/tee_times_item_list
+		//android:id/content
+		String scrollableList = "com.supremegolf.app.stage:id/tee_times_item_list";
+		String uiSelector = "android.widget.TextView";
+		String textToSearchInList = "7:20";
 		try{
 			Scrolling page= new Scrolling(driver);
-		    MobileElement element= page.scrollElementByContentDesc("com.supremegolf.app.stage:id/tee_times_item_list",
-		                "android.widget.TextView", "6:30", "A");
-		    Thread.sleep(5000);
-		  Actions ver= new Actions(driver);
-		 ver.moveToElement(element).click().build().perform();
+		  MobileElement element= page.scrollElementByContentText(scrollableList, uiSelector, textToSearchInList);
+		  element.click();
+		    
 		}catch(Exception e){
 		    //do nothing
 		}
+		
+		
+		Thread.sleep(3000);
 		}	
 		
 
@@ -164,18 +168,24 @@ public class BookingMobile {
 		driver.findElement(By.id("com.supremegolf.app.stage:id/numberOfPlayersHolder")).click();
 
 		Thread.sleep(2000);
-		ver.moveToElement(driver.findElement(By.id("com.supremegolf.app.stage:id/players_screen_two_player_view")))
+		
+		ver.moveToElement(driver.findElement(By.id("com.supremegolf.app.stage:id/players_screen_single_player_view")))
 				.build().perform();
-		driver.findElement(By.id("com.supremegolf.app.stage:id/players_screen_two_player_view")).click(); // dos players
-
-		Thread.sleep(4000);
-
-		ver.moveToElement(driver.findElement(By.id("com.supremegolf.app.stage:id/switchTermsConditions1"))).build()
-				.perform();
-		driver.findElement(By.id("com.supremegolf.app.stage:id/switchTermsConditions1")).isEnabled();
-		driver.findElement(By.id("com.supremegolf.app.stage:id/switchTermsConditions1")).click();
-
+		driver.findElement(By.id("com.supremegolf.app.stage:id/players_screen_single_player_view")).click(); // dos players
+		
+		Thread.sleep(2000);
+		
+		ver.moveToElement(driver.findElement(By.id("com.supremegolf.app.stage:id/switchTermsConditions1")))
+		.build().perform();
+        driver.findElement(By.id("com.supremegolf.app.stage:id/switchTermsConditions1")).click();    
+		   
+		   
+		
 	}
+		
+
+		
+	
 
 	@Then("^Click on button Booking$")
 	public void click_on_button_Booking() throws Throwable {

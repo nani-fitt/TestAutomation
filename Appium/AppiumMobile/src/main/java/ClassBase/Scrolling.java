@@ -23,18 +23,33 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class Scrolling {
 
-	 AndroidDriver<WebElement> driver;
-	
+
+	AndroidDriver<WebElement> driver;
+	 
    public Scrolling (AndroidDriver<WebElement> driver)
    {
 	   this.driver=driver;
    }
 	
-	public MobileElement scrollElementByContentDesc(String scrollableList, String uiSelector, String textToSearchInList, String textToSearchInList2) {
-        return (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByDescription("
-                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList+ "\", \"" + textToSearchInList2+ "\" )"));
+	public MobileElement scrollElementByContentText(String scrollableList, String uiSelector, String textToSearchInList) {
+       
+		 MobileElement element= (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByText("
+                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));
+		
+		return element;
 	}
+
+	public MobileElement scrollElementByContentDesc(String scrollableList, String uiSelector, String textToSearchInList) {
+	       
+		 MobileElement element= (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
+               "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByDescription("
+                       + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));
+		 
+		 System.out.println(element.getText());
+		return element;
+	}
+
 
 	
 	
