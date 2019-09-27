@@ -145,7 +145,8 @@ public class BookingMobile {
 		try{
 			Scrolling page= new Scrolling(driver);
 		    MobileElement element= page.scrollElementByContentDesc("com.supremegolf.app.stage:id/tee_times_item_list",
-		                "android.widget.TextView", "6:30");
+		                "android.widget.TextView", "6:30", "A");
+		    Thread.sleep(5000);
 		  Actions ver= new Actions(driver);
 		 ver.moveToElement(element).click().build().perform();
 		}catch(Exception e){
