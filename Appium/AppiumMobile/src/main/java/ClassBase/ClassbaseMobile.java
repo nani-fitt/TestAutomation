@@ -1,6 +1,5 @@
-package Class;
+package ClassBase;
 
-import java.awt.Desktop.Action;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,26 +8,27 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
 
 import com.google.common.base.Function;
 
-public class ClassBase {
+import io.appium.java_client.android.AndroidDriver;
 
-	public WebDriver driver;
+public class ClassbaseMobile {
+	
+	AndroidDriver<WebElement> driver;
 	JavascriptExecutor ex;
 	private static final int PAGE_WAIT_TIMEOUT_IN_SECONDS = 100;
 
-	public ClassBase(WebDriver driver) {
-
-		this.driver = driver;
+	public ClassbaseMobile(AndroidDriver<WebElement> driver)
+	{
+		this.driver= driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -108,7 +108,7 @@ public class ClassBase {
 		          webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 	}
 	
-	//-------------------------Esperar por el elemento--------------------------------------------------------------
+	//esperar por el elemento--------------------------------------------------------------
 	
 	protected void waitForElement(final By by, final int timeoutInSeconds)
 	{
@@ -116,7 +116,7 @@ public class ClassBase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 	 
-	//---------------------------------------esperar porque cargue la pagina---------------------
+	//------------------esperar porque cargue la pagina---------------------
 	
 	public void waitForPageLoad() 
 	{
@@ -177,28 +177,8 @@ public class ClassBase {
 	}
 	}
 
-	//////////////////---------------verificar el elemento si esta--------------------/////////////////
 	
-	
-	public void assertAndVerifyElement(By element) throws InterruptedException {
-        boolean isPresent = false;
-
-        for (int i = 0; i < 5; i++) {
-            try {
-                if (driver.findElement(element) != null) {
-                    isPresent = true;
-                    break;
-                }
-            } catch (Exception e) {
-                // System.out.println(e.getLocalizedMessage());
-                Thread.sleep(1000);
-            }
-        }
-        Assert.assertTrue(isPresent, "\"" + element + "\" is not present.");
-
-}
-	
-	//-----------------------------------present element--------------------------------------------------------------
+	//////////////////////////present element--------------------------------------------------------------
 	
 	protected Function<WebDriver,WebElement> presenceOfElementLocated(final By locator) {
 	    return new Function<WebDriver, WebElement>() {
@@ -208,5 +188,5 @@ public class ClassBase {
 	        }
 	    };
 	}
+
 }
-	
