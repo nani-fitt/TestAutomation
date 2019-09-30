@@ -144,12 +144,10 @@ public class BookingMobile {
 		//android:id/content
 		String scrollableList = "com.supremegolf.app.stage:id/tee_times_item_list";
 		String uiSelector = "android.widget.TextView";
-		String textToSearchInList = "7:00";
+		String textToSearchInList = "8:00";
 		try{
 			Scrolling page= new Scrolling(driver);
 		  MobileElement element= page.scrollElementByContentText(scrollableList, uiSelector, textToSearchInList);
-		  WebDriverWait wait= new WebDriverWait(driver, 30);
-		  wait.until(ExpectedConditions.elementToBeSelected(element));
 		  element.click();
 		    
 		}catch(Exception e){

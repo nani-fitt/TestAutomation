@@ -23,8 +23,8 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class Scrolling {
 
-
 	AndroidDriver<WebElement> driver;
+
 	 
    public Scrolling (AndroidDriver<WebElement> driver)
    {
@@ -32,10 +32,12 @@ public class Scrolling {
    }
 	
 	public MobileElement scrollElementByContentText(String scrollableList, String uiSelector, String textToSearchInList) {
-       
-		 MobileElement element= (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByText("
-                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));
+    
+		MobileElement element= (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
+	                "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByText("
+	                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));
+		
+		System.out.println(element.getText());
 		
 		return element;
 	}

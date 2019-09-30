@@ -36,10 +36,10 @@ public class SignInMobile {
 		
 		DesiredCapabilities test = new DesiredCapabilities();
 		test.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-		test.setCapability(MobileCapabilityType.DEVICE_NAME, "Google Nexus 5X");
-		test.setCapability(MobileCapabilityType.UDID, "192.168.138.106:5555");
+		test.setCapability(MobileCapabilityType.DEVICE_NAME, "Samsung Galaxy S10");
+		test.setCapability(MobileCapabilityType.UDID, "192.168.138.105:5555");
 		test.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		test.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
+		test.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
 
 		test.setCapability("appPackage", "com.supremegolf.app.stage");
 		test.setCapability("appActivity", "com.supremegolf.app.ui.activity.SplashActivity");
