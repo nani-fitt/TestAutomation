@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 
 import Class.TestBase;
 
-@Listeners(listener.ListenerTest.class)
-
 public class BookingTest extends TestBase{
 	
 	

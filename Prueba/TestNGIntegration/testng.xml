@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNGINtegration" verbose="1">
+<parameter name="myName"  value="true"/>
+<listeners>
+<!-- 		<listener class-name="reportTest.ExtentReporter" /> -->
+		<listener class-name="reportTest.TestListener" />		
+	</listeners>  
+     <test name="testng">
+		<classes>
+			<class name="TestSuite.CreateRuleComun" />
+			<class name="TestSuite.FilterRule" />
+			<class name="TestSuite.ExceptionResol" />
+		</classes>
+	</test>
+    </suite>

@@ -3,6 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="TestSuite.ExceptionResol">
+        <methods>
+          <include name="afterTest"/>
+          <include name="ExceptionResolution" invocation-numbers="0"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- TestSuite.ExceptionResol -->
       <class name="TestSuite.BookingTest">
         <methods>
           <include name="afterTest"/>
@@ -10,6 +17,39 @@
           <include name="beforeTest"/>
         </methods>
       </class> <!-- TestSuite.BookingTest -->
+      <class name="TestSuite.FilterRule">
+        <methods>
+          <include name="afterTest"/>
+          <include name="FilterRule" invocation-numbers="0"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- TestSuite.FilterRule -->
+      <class name="TestSuite.CreateRuleComun">
+        <methods>
+          <include name="afterTest"/>
+          <include name="CreateRuleTest" invocation-numbers="0"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- TestSuite.CreateRuleComun -->
+      <class name="TestSuite.Cancelbooking">
+        <methods>
+          <include name="cancelbooking"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- TestSuite.Cancelbooking -->
+      <class name="TestSuite.NewTest">
+        <methods>
+          <include name="ByVisibleElement"/>
+        </methods>
+      </class> <!-- TestSuite.NewTest -->
+      <class name="TestSuite.SignUPSupremGolf">
+        <methods>
+          <include name="f"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- TestSuite.SignUPSupremGolf -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

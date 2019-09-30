@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestNGINtegration]">
+  <parameter name="myName" value="true"/>
+  <listeners>
+    <listener class-name="reportTest.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="testng(failed)">
     <classes>
-      <class name="TestSuite.BookingTest">
+      <class name="TestSuite.ExceptionResol">
         <methods>
           <include name="afterTest"/>
-          <include name="Booking"/>
+          <include name="ExceptionResolution" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- TestSuite.BookingTest -->
+      </class> <!-- TestSuite.ExceptionResol -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- testng(failed) -->
+</suite> <!-- Failed suite [TestNGINtegration] -->
