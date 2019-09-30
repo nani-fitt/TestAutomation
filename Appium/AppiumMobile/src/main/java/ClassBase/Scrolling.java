@@ -38,7 +38,7 @@ public class Scrolling {
 	                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));
 		
 		System.out.println(element.getText());
-		
+		System.out.println(element.getText());
 		return element;
 	}
 
@@ -63,5 +63,4 @@ public class Scrolling {
 	}
 	
 	//scrollableList is id of your scrollable List element
-	
 }
