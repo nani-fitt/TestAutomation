@@ -33,16 +33,15 @@ public class Scrolling {
 	
 	public MobileElement scrollElementByContentText(String scrollableList, String uiSelector, String textToSearchInList) {
     
-		if(textToSearchInList != null)
-		{
+		
 		MobileElement element= (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
 	                "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByText("
 	                        + "new UiSelector().className(\"" + uiSelector + "\"), \"" + textToSearchInList + "\" )"));	
-		System.out.println(element.getText());
-		return element;
-		}
 		
-		return null;
+		System.out.println(element.getText());
+		
+		return element;
+		
 	}
 
 	public MobileElement scrollElementByContentDesc(String scrollableList, String uiSelector, String textToSearchInList) {

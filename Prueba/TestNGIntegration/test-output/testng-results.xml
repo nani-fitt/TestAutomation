@@ -1,54 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNGINtegration" duration-ms="75474" started-at="2019-09-30T12:44:05 UYT" finished-at="2019-09-30T12:45:21 UYT">
+  <suite name="Default suite" duration-ms="22775" started-at="2019-10-02T18:45:36 UYT" finished-at="2019-10-02T18:45:59 UYT">
     <groups>
     </groups>
-    <test name="testng" duration-ms="75474" started-at="2019-09-30T12:44:05 UYT" finished-at="2019-09-30T12:45:21 UYT">
-      <class name="TestSuite.ExceptionResol">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestSuite.ExceptionResol@442675e1]" name="beforeTest" is-config="true" duration-ms="5658" started-at="2019-09-30T12:44:58 UYT" finished-at="2019-09-30T12:45:04 UYT">
+    <test name="Default test" duration-ms="22775" started-at="2019-10-02T18:45:36 UYT" finished-at="2019-10-02T18:45:59 UYT">
+      <class name="TestSuite.BookingTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestSuite.BookingTest@1f57539]" name="beforeTest" is-config="true" duration-ms="4630" started-at="2019-10-02T18:45:36 UYT" finished-at="2019-10-02T18:45:41 UYT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="ExceptionResolution(int, int, java.lang.String)[pri:0, instance:TestSuite.ExceptionResol@442675e1]" name="ExceptionResolution" duration-ms="16688" started-at="2019-09-30T12:45:04 UYT" data-provider="getException" finished-at="2019-09-30T12:45:21 UYT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[552]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[168]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="Booking()[pri:0, instance:TestSuite.BookingTest@1f57539]" name="Booking" duration-ms="18097" started-at="2019-10-02T18:45:41 UYT" finished-at="2019-10-02T18:45:59 UYT">
+          <exception class="org.openqa.selenium.interactions.MoveTargetOutOfBoundsException">
             <message>
-              <![CDATA[Unable to locate element: //table[@class='table table-striped table-hover']//td[contains(text(),'552')]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[(1101, 1000) is out of bounds of viewport width (1920) and height (966)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-CHEFHGA', ip: '192.168.62.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_172'
+System info: host: 'DESKTOP-CHEFHGA', ip: '192.168.138.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_172'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16272, moz:profile: C:\Users\CODIGO DEL SUR\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9a86b554-ad5f-4e41-839a-8308b4d485d4
-*** Element info: {Using=xpath, value=//table[@class='table table-striped table-hover']//td[contains(text(),'552')]}]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 15252, moz:profile: C:\Users\CODIGO DEL SUR\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e01d9ccd-d051-4e14-bc15-3d900e2b58c7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //table[@class='table table-striped table-hover']//td[contains(text(),'552')]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: (1101, 1000) is out of bounds of viewport width (1920) and height (966)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-CHEFHGA', ip: '192.168.62.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_172'
+System info: host: 'DESKTOP-CHEFHGA', ip: '192.168.138.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_172'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 16272, moz:profile: C:\Users\CODIGO DEL SUR\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9a86b554-ad5f-4e41-839a-8308b4d485d4
-*** Element info: {Using=xpath, value=//table[@class='table table-striped table-hover']//td[contains(text(),'552')]}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 15252, moz:profile: C:\Users\CODIGO DEL SUR\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e01d9ccd-d051-4e14-bc15-3d900e2b58c7
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -59,12 +38,12 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at ClassPage.ExceptionResolutionPage.ExceptionResolution(ExceptionResolutionPage.java:58)
-at TestSuite.ExceptionResol.ExceptionResolution(ExceptionResol.java:20)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Class.ClassBase.moveToElement(ClassBase.java:54)
+at ClassPage.Booking.ListaTeeTimes(Booking.java:212)
+at TestSuite.BookingTest.Booking(BookingTest.java:20)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,87 +74,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.interactions.MoveTargetOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ExceptionResolution -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestSuite.ExceptionResol@442675e1]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-09-30T12:45:21 UYT" finished-at="2019-09-30T12:45:21 UYT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- TestSuite.ExceptionResol -->
-      <class name="TestSuite.FilterRule">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestSuite.FilterRule@71248c21]" name="beforeTest" is-config="true" duration-ms="5248" started-at="2019-09-30T12:44:37 UYT" finished-at="2019-09-30T12:44:42 UYT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="FilterRule(java.lang.String, java.lang.String)[pri:0, instance:TestSuite.FilterRule@71248c21]" name="FilterRule" duration-ms="16389" started-at="2019-09-30T12:44:42 UYT" data-provider="getFilter" finished-at="2019-09-30T12:44:58 UYT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[09/06/2019]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[09/06/2019]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FilterRule -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestSuite.FilterRule@71248c21]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-09-30T12:44:58 UYT" finished-at="2019-09-30T12:44:58 UYT">
+        </test-method> <!-- Booking -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestSuite.BookingTest@1f57539]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-02T18:45:59 UYT" finished-at="2019-10-02T18:45:59 UYT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- TestSuite.FilterRule -->
-      <class name="TestSuite.CreateRuleComun">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestSuite.CreateRuleComun@453da22c]" name="beforeTest" is-config="true" duration-ms="5282" started-at="2019-09-30T12:44:05 UYT" finished-at="2019-09-30T12:44:10 UYT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="CreateRuleTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestSuite.CreateRuleComun@453da22c]" name="CreateRuleTest" duration-ms="26142" started-at="2019-09-30T12:44:10 UYT" data-provider="getRule" finished-at="2019-09-30T12:44:37 UYT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10/04/2019]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[06]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[00]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[12]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateRuleTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestSuite.CreateRuleComun@453da22c]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-09-30T12:44:37 UYT" finished-at="2019-09-30T12:44:37 UYT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- TestSuite.CreateRuleComun -->
-    </test> <!-- testng -->
-  </suite> <!-- TestNGINtegration -->
+      </class> <!-- TestSuite.BookingTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

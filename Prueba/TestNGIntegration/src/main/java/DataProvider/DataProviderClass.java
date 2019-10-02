@@ -6,8 +6,8 @@ public class DataProviderClass {
 
 	@DataProvider(name = "getRule")
 	public static Object[][] dataProviderMethodRule() {
-		return new Object[][] { { "10/04/2019", "06", "10", "00", "12", "10" }
-			//	{ "09/29/2019", "06", "12", "20", "12", "10" }, 
+		return new Object[][] { { "10/06/2019", "06", "10", "00", "12", "10" },
+				{ "10/06/2019", "06", "06", "20", "12", "10" } 
 			//	{ "09/30/2019", "6", "20", "10", "12", "10" },
 			//	{ "10/01/2019", "6", "06", "10", "12", "10" }
 

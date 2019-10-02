@@ -2,6 +2,8 @@ package ClassPage;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.http.auth.AuthSchemeRegistry;
@@ -66,6 +68,8 @@ public class Booking extends ClassBase {
 
 	By coursesupreme = By.xpath("//h2[@class='m-bookit--course-name prepare']");
 
+	By listateetimes = By.xpath("//tr[@class='js-teetime-row']");
+
 	public Booking(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -101,20 +105,14 @@ public class Booking extends ClassBase {
 
 		String book01 = "//tr[@id='tee_time_";
 		String book2 = "']//span[@class='words'][contains(text(),'Book It')]";
-		
-		FindElement(nextday).click();
-		Thread.sleep(3000);
-		
-		FindElement(nextday).click();
-        
+
 		Thread.sleep(5000);
 
 		ScrollFinalpage(By.xpath(book01 + num + book2));
 		driver.findElement(By.xpath(book01 + num + book2)).click();
 		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		SelectElement(players, play);
-
-		 Thread.sleep(5000);
+		Thread.sleep(5000);
 
 		// if (FindElement(closemesage).isDisplayed()) {
 		// FindElement(closemesage).click();
@@ -151,7 +149,7 @@ public class Booking extends ClassBase {
 
 		WebDriverWait wait2 = new WebDriverWait(driver, 10);
 		wait2.until(presenceOfElementLocated(By.xpath(bookcourseagain)));
-		
+
 		driver.findElement(By.xpath(bookcourseagain)).click();
 
 		Thread.sleep(3000);
@@ -162,4 +160,73 @@ public class Booking extends ClassBase {
 	public void Conectar() {
 		driver.get(url);
 	}
+
+	public void ListaTeeTimes() throws Exception {
+
+		List<WebElement> lista = driver.findElements(listateetimes);
+
+		List<WebElement> time;
+		List<WebElement> precio;
+		List<WebElement> transport;
+		List<WebElement> bookit;
+		
+		boolean found;
+	
+		System.out.println(lista.size());
+
+		for (int i = 0; i < lista.size(); i++) {
+
+			time = lista.get(i).findElements(By.xpath("//td[@class=' row time']"));
+			System.out.println("Elemento texto1  " + time.size());
+			
+			precio = lista.get(i).findElements(By.xpath("//td[@class='row rate']"));
+			System.out.println("Elemento texto2  " + precio.size());
+			
+			
+			transport = lista.get(i).findElements(By.xpath("//td[@class='row transport']"));
+			System.out.println("Elemento texto3  " + transport.size());
+		    
+			bookit = lista.get(i).findElements(By.xpath("//span[@class='words']"));
+			System.out.println("Elemento texto4  " + bookit.size());
+		
+		for(int j= 0; j < time.size(); j++)	
+		{
+			System.out.println(time.get(j).getText());
+			
+			if(time.get(j).getText().equalsIgnoreCase("6:10 AM"))
+			{
+				for(int k= 0; k < precio.size(); k++)
+				{
+					System.out.println(precio.get(k).getText());
+					
+					if(precio.get(k).getText().equalsIgnoreCase("$7.00"))
+					{
+					
+					
+					for(int m= 0; m < bookit.size(); m++) 
+					{
+						System.out.println(bookit.get(m).getText());
+						
+						if(bookit.get(m).getText().equalsIgnoreCase("Book It"))
+						{
+							moveToElement(bookit.get(k));
+							break;
+							
+						}
+					}
+				
+				   }
+				}
+			}
+			
+		}
+		
+		
+			 
 }
+	
+}
+}
+
+
+

@@ -17,6 +17,7 @@ public class BookingTest extends TestBase{
 	  ClassPage.Booking page=new ClassPage.Booking(driver);
 	  page.Conectar();
 	  page.signIn("eguerrero@codigodelsur.com", "123456789", "SUPREME GOLF DEMO COURSE");
+	  page.ListaTeeTimes();
 	  page.MadeBooking("4",705864722);
 	  page.CompletyBooking();
 	  
